@@ -36,7 +36,7 @@ app.get("/tweet", (req, res) => {
 
     // return fetched data from twitter api and return response of the fetch request
     const data = fetch(
-      `https://api.twitter.com/2/users/by?usernames=${username}&user.fields=created_at,description&expansions=pinned_tweet_id`,
+      `https://api.twitter.com/2/users/by?usernames=${username}&user.fields=description,created_at,entities,location,pinned_tweet_id,public_metrics,profile_image_url,url`,
       requestOptions
     )
       .then((response) => response.json())
